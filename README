@@ -1,0 +1,40 @@
+AppConfig
+=========
+
+  This plugin helps to load config values from yml file based on the environment, with out writing extra code.
+  some of the preconditions are
+    1. Add your constants to "app_config.yml" and place in 'config' folder.
+    2. Once plugin installed. Application expects the file to be present in config folder. Else you can expect a warning while starting the server
+    3. Any errors/warning will be displayed while start of the server.
+   
+
+Example
+=======
+
+  config/app_config.yml
+
+  development:
+    admin_mail:     admin@example.com
+    thirdparty_api: dev.sample.com
+  production:
+    admin_mail:     admin@example.com
+    thirdparty_api: sample.com
+
+from the application you can access the values(based on environment) as AppConfig::<key in caps> 
+  ex: AppConfig::ADMIN_MAIL 
+  
+
+  some of the common warnings are pasted here:
+  
+  ************************** AppConfig : WARNING ******************************
+  ** Can not load values from config file 
+  ** <path>/config/app_constants.yml is missing 
+  *****************************************************************************
+
+  ********** AppConfig : ERROR ****************
+  ** Error reading /home/shilesh/workspace/load_constants/config/app_config.yml
+  ** syntax error on line 2, col 1: ` admin_email: 'dev@example.com''
+  *********************************************
+  
+
+Copyright (c) 2011 [shilesh], released under the MIT license
