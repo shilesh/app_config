@@ -19,4 +19,10 @@ module AppConfig
      puts "** #{config_file} is missing "
      puts "****************************************************************************"
   end
+
+ def self.method_missing(m, *args, &block)
+    puts "********** AppConfig : ERROR ****************"
+	  puts "Invalid operation: Did you mean AppConfig::#{m} ?"
+    puts "*********************************************"
+ end
 end
