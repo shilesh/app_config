@@ -20,9 +20,9 @@ module AppConfig
      puts "****************************************************************************"
   end
 
- def self.method_missing(m, *args, &block)
+  def self.method_missing(m, *args, &block)
     puts "********** AppConfig : ERROR ****************"
-	  puts "Invalid operation: Did you mean AppConfig::#{m} ?"
+    puts "Invalid operation: Did you mean AppConfig::#{m.upcase} ?"
     puts "*********************************************"
- end
+  end
 end
