@@ -7,6 +7,7 @@ AppConfig
     2. Once plugin installed. Application expects the file to be present in config folder. Else you can expect a warning while starting the server
     3. Any errors/warning will be displayed while start of the server.
    
+http://shyleshkumar.blogspot.com/2011/05/plugin-for-loading-application.html
 
 Example
 =======
