@@ -36,5 +36,6 @@ from the application you can access the values(based on environment) as AppConfi
   ** syntax error on line 2, col 1: ` admin_email: 'dev@example.com''
   *********************************************
   
+Todo: It does not filter reserved key words.
 
 Copyright (c) 2011 [shilesh], released under the MIT license
