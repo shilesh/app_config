@@ -28,7 +28,7 @@ module AppConfigBase
      puts "****************************************************************************"
   end
 
-  def self.method_missing(m, *args, &block)
+  def klass.method_missing(m, *args, &block)
     puts "********** AppConfig : ERROR ****************"
     puts "Invalid operation: Did you mean AppConfig::#{m.upcase} ?"
     puts "*********************************************"
