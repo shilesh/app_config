@@ -1,2 +1,9 @@
 # Include hook code here
-require 'app_config_base'
+if Dir.exists?(File.join('config', 'app_config'))
+  require 'app_config_base'
+else
+  puts "***************** Error **********************"
+  puts " 'config/app_config' is not present, Can not proceed"
+  puts "**********************************************"
+  exit(1)
+end  

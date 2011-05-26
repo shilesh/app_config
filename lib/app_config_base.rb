@@ -8,7 +8,6 @@ module AppConfigBase
   Object.module_eval("module #{namespace}; end")
   klass = namespace.constantize
   
-  #  config_file = File.join(RAILS_ROOT, "/config/app_config.yml")
   if File.exists? config_file
     begin
       APP_CONSTANTS = YAML.load_file(config_file) ? YAML.load_file(config_file)[RAILS_ENV] : []  
@@ -29,8 +28,6 @@ module AppConfigBase
   end
 
   def klass.method_missing(m, *args, &block)
-    puts "********** AppConfig : ERROR ****************"
-    puts "Invalid operation: Did you mean AppConfig::#{m.upcase} ?"
-    puts "*********************************************"
+    "AppConfig:ERROR : Invalid operation: Did you mean <ConfigFileName>::#{m.upcase} ?"  
   end
 end
