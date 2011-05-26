@@ -28,6 +28,6 @@ module AppConfigBase
   end
 
   def klass.method_missing(m, *args, &block)
-    "AppConfig:ERROR : Invalid operation: Did you mean <ConfigFileName>::#{m.upcase} ?"  
+    "AppConfig:ERROR : Invalid operation: Did you mean #{self}::#{m.upcase} ?"  
   end
 end
