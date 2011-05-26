@@ -5,5 +5,5 @@ else
   puts "***************** Error **********************"
   puts " 'config/app_config' is not present : "
   puts "**********************************************"
-  `mkdir conf/app_config`
+  `mkdir config/app_config`
 end  

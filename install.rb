@@ -14,7 +14,7 @@ def return_with_error message
 end
 
 if Dir.exists? app_conf_folder
-  return_with_error('Application already have a config/app_config folder. Can not install plugin (either rename or remove the folder)')
+  return_with_error('Application already have a config/app_config folder. Still plugin will be installed, make sure values in app_config/*.yml is proper')
 else
   Dir.mkdir(app_conf_folder)
   app_config_file = File.join(app_conf_folder, 'app_config.yml')
