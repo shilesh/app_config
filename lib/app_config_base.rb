@@ -1,11 +1,19 @@
 #Load app_constants YML file
-module AppConfig
-  config_file = File.join(RAILS_ROOT, "/config/app_config.yml")
+module AppConfigBase
+    
+  pattern = File.join('config', 'app_config', '*.yml')
+  config_file = Dir.glob(pattern).first
+  namespace = File.basename(config_file).split('.').first.classify
+  #Dynamic creation of namespace 
+  Object.module_eval("module #{namespace}; end")
+  klass = namespace.constantize
+  
+  #  config_file = File.join(RAILS_ROOT, "/config/app_config.yml")
   if File.exists? config_file
     begin
       APP_CONSTANTS = YAML.load_file(config_file) ? YAML.load_file(config_file)[RAILS_ENV] : []  
       APP_CONSTANTS.each do |const|
-        AppConfig.const_set(const[0].upcase, const[1])
+        klass.const_set(const[0].upcase, const[1])
       end
     rescue Exception => e
       puts "********** AppConfig : ERROR ****************"
