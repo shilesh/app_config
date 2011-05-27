@@ -5,7 +5,8 @@ AppConfig
 	=======
 		This plugin helps to load values from a config file(yml) file based on the environment, with out writing 
 extra code. ie: if you have a config file as 'app_config.yml' and has values in it as title: 'Caption'.The plugin helps you 
-to call as "AppConfig::TITLE". If your config file name is 'ror_values.yml' then the values can be accessed as RorValue::TITLE". In short <FileName>::<key in caps>.
+to call as "AppConfig::TITLE". If your config file name is 'ror_values.yml' then the values can be accessed as 
+RorValue::TITLE". In short <FileName>::<key in caps>.
 		I have tested against ruby 1.9 and rails 3.0
 
 	How to use:
@@ -18,7 +19,8 @@ to call as "AppConfig::TITLE". If your config file name is 'ror_values.yml' then
 		Based on the file name the namescope will be created to access the values( <FileName>::<KEY> ).
 		Restart the server if you change the file name. 
 		You can expect helpfull error messages being raised on invalid access.
-		When you uninstall the files in config/app_config/* will be retained, expecting that it would contain usefull data. You can manually 	delete it if needed.
+		When you uninstall the files in config/app_config/* will be retained, expecting that it 
+would contain usefull data. You can manually 	delete it if needed.
    
 		http://shyleshkumar.blogspot.com/2011/05/plugin-for-loading-application.html
 
