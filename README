@@ -1,42 +1,52 @@
 AppConfig
 =========
 
-  This plugin helps to load config values from yml file based on the environment, with out writing extra code.
-  some of the preconditions are
-    1. Add your constants to "app_config.yml" and place in 'config' folder.
-    2. Once plugin installed. Application expects the file to be present in config folder. Else you can expect a warning while starting the server
-    3. Any errors/warning will be displayed while start of the server.
+	Summary:
+	=======
+		This plugin helps to load values from a config file(yml) file based on the environment, with out writing extra code. ie: if you have a config file as 'app_config.yml' and has values in it as title: 'Caption'. The plugin helps you to call it as "AppConfig::TITLE" or if your config file name is 'ror_values.yml' then the values can be accessed as "RorValue::TITLE". In short <FileName>::<key in caps>.
+		I have tested against ruby 1.9 and rails 3.0
+
+	How to use:
+	==========
+		Install the plugin. 
+		This will create a folder 'app_config' inside 'config' folder of your rails application. 
+		A mock config file, named 'app_config.yml', will be created with sample data. 
+		User can edit the file with proper values. 
+		The file name can be renamed
+		Based on the file name the namescope will be created to access the values( <FileName>::<KEY> ).
+		Restart the server if you change the file name. 
+		You can expect helpfull error messages being raised on invalid access.
+		When you uninstall the files in config/app_config/* will be retained, expecting that it would contain usefull data. You can manually 	delete it if needed.
    
-http://shyleshkumar.blogspot.com/2011/05/plugin-for-loading-application.html
+		http://shyleshkumar.blogspot.com/2011/05/plugin-for-loading-application.html
 
 Example
 =======
 
-  config/app_config.yml
+  config/app_config/app_config.yml
 
   development:
-    admin_mail:     admin@example.com
+    admin_mail: admin@example.com
     thirdparty_api: dev.sample.com
   production:
-    admin_mail:     admin@example.com
+    admin_mail: admin@example.com
     thirdparty_api: sample.com
 
-from the application you can access the values(based on environment) as AppConfig::<key in caps> 
-  ex: AppConfig::ADMIN_MAIL 
+from the application you can access the values(based on environment) as <FileName>::<key in caps>
+  ex: AppConfig::ADMIN_MAIL
   
 
   some of the common warnings are pasted here:
   
   ************************** AppConfig : WARNING ******************************
-  ** Can not load values from config file 
-  ** <path>/config/app_constants.yml is missing 
+  ** Can not load values from config file
+  ** <path>/config/app_config/app_constants.yml is missing
   *****************************************************************************
 
   ********** AppConfig : ERROR ****************
-  ** Error reading /home/shilesh/workspace/load_constants/config/app_config.yml
+  ** Error reading <some path>/config/app_config/app_config.yml
   ** syntax error on line 2, col 1: ` admin_email: 'dev@example.com''
   *********************************************
   
-Todo: It does not filter reserved key words.
 
 Copyright (c) 2011 [shilesh], released under the MIT license
