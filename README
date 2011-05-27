@@ -3,8 +3,9 @@ AppConfig
 
 	Summary:
 	=======
-		This plugin helps to load values from a config file(yml) file based on the environment, with out writing extra
- code. ie: if you have a config file as 'app_config.yml' and has values in it as title: 'Caption'. The plugin helps you to all it as "AppConfig::TITLE" or if your config file name is 'ror_values.yml' then the values can be accessed as "RorValue::TITLE". In short <FileName>::<key in caps>.
+		This plugin helps to load values from a config file(yml) file based on the environment, with out writing 
+extra code. ie: if you have a config file as 'app_config.yml' and has values in it as title: 'Caption'.The plugin helps you 
+to call as "AppConfig::TITLE". If your config file name is 'ror_values.yml' then the values can be accessed as RorValue::TITLE". In short <FileName>::<key in caps>.
 		I have tested against ruby 1.9 and rails 3.0
 
 	How to use:
