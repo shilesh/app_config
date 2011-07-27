@@ -1,4 +1,3 @@
-
 # Create a folder 'app_config' in config
 # Create a file 'app_config.yaml' in app_config folder.
 # Initialize with entries for test, dev, and prod
@@ -13,7 +12,7 @@ def return_with_error message
   exit(1)
 end
 
-if Dir.exists? app_conf_folder
+if File.directory? app_conf_folder
   return_with_error('Application already have a config/app_config folder. Still plugin will be installed, make sure values in app_config/*.yml is proper')
 else
   Dir.mkdir(app_conf_folder)
