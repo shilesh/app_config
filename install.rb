@@ -38,7 +38,7 @@ production:
 STR
     app_config_file << dummy_entries
     puts "******************* config folders created as ****************"
-    puts File.expand_path(app_config_file)
+    puts File.expand_path(app_config_file.path)
     puts "******************* ********************** ****************"
     app_config_file.close
 end
