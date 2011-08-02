@@ -12,6 +12,7 @@ def return_with_error message
   exit(1)
 end
 
+begin
 if File.directory? app_conf_folder
   return_with_error('Application already have a config/app_config folder. Still plugin will be installed, make sure values in app_config/*.yml is proper')
 else
@@ -40,4 +41,9 @@ STR
     puts File.expand_path(app_config_file)
     puts "******************* ********************** ****************"
     app_config_file.close
+end
+
+rescue Exception => e
+ p e.message
+ e.backtrace
 end
