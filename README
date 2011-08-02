@@ -21,6 +21,9 @@ RorValue::TITLE". In short <FileName>::<key in caps>.
 		You can expect helpfull error messages being raised on invalid access.
 		When you uninstall the files in config/app_config/* will be retained, expecting that it 
 would contain usefull data. You can manually 	delete it if needed.
+
+  Install:
+    rails plugin install git://github.com/shilesh/app_config.git
    
 		http://shyleshkumar.blogspot.com/2011/05/plugin-for-loading-application.html
 
@@ -52,5 +55,4 @@ from the application you can access the values(based on environment) as <FileNam
   ** syntax error on line 2, col 1: ` admin_email: 'dev@example.com''
   *********************************************
   
-
 Copyright (c) 2011 [shilesh], released under the MIT license
